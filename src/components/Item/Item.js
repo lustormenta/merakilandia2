@@ -1,6 +1,8 @@
 import './Item.css';
-import { ListItemSecondaryAction } from '@mui/material';
-import Button from '@mui/material/Button';
+import Product from '../Product/Product'
+import ItemCount from '../ItemCount/ItemCount'
+
+
 
 const Item = ({img, name, price, stock}) => {
     return(
@@ -10,8 +12,10 @@ const Item = ({img, name, price, stock}) => {
             <h3>{name}</h3>
             <b>Precio: ${price}</b>
             <p>Stock: {stock}</p>
-            <Button variant="outlined">Comprar</Button>
+            <ItemCount />
+            <Product />
             <hr></hr>
+
         </div>
     )
 }

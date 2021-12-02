@@ -1,0 +1,13 @@
+#contador {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px solid black;
+    width: 200px;
+}
+
+button {
+    width: 100px;
+    margin: 10px;
+}
+

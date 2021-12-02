@@ -1,9 +1,5 @@
 import './Listitems.css';
-import Item from '../Listitems/Item/Item.js';
-import Test from '../Test/Test.js';
-
-//Functional component (recomended)
-
+import Item from '../Item/Item.js';
 
 const Listitems = () => {
     const dataProducts = [
@@ -32,23 +28,22 @@ const Listitems = () => {
             stock: 'Siempre disponible'
         }
     ]
-    return(
+        return ( 
         <>
-            <h2>Productos en oferta</h2>
-            {dataProducts.map((product) => {
-                return(
-                    <Item img={product.img} name={product.name} price={product.price} stock={product.stock} />
-                )
-            })}
-
-            <h1 className="tituloTest">Ejemplo children</h1>
-            <Test>
-                <p>Texto desde padre</p>
-            </Test>
+            <h2> Productos en oferta </h2> {
+                dataProducts.map((product) => {
+                    return ( 
+                        <Item 
+                        img = {product.img} 
+                        name = {product.name} 
+                        price = {product.price} 
+                        stock = {product.stock}
+                        />
+                    )
+                })
+            }
         </>
-    )
-}
+        )
+    }
 
 export default Listitems;
-
-
