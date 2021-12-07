@@ -10,11 +10,10 @@ const Item = ({img, name, price, stock}) => {
         <div>
             <img src= {img} alt={name} width="300" height="300"/>
             <h3>{name}</h3>
-            <b>Precio: ${price}</b>
+            
             <p>Stock: {stock}</p>
             <ItemCount />
             <Product />
-            <hr></hr>
 
         </div>
     )

@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
+
 
 
 export default function Product() {
@@ -17,4 +18,6 @@ export default function Product() {
             <button onClick={click}>Comprar</button>
         </div>
     );
+    
 }
+
