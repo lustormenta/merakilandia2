@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react'
-import './Listitems.css';
+import './ItemListContainer.css';
 import Item from '../Item/Item.js';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
 
-const Listitems = () => {
+const ItemListContainer = () => {
     const [products, setProducts] = useState([])
-    const dataProducts = [
+    const dataProduct = [
         {
             id: 1,
             img: "./assets/cocos.jpg",
@@ -43,7 +43,7 @@ const Listitems = () => {
         //el resolve dice que es lo que 
         //debe hacer la promesa al ejecutarse
         setTimeout(() => {
-            resolve(dataProducts)  
+            resolve(dataProduct)  
         }, 2000)
         
     })
@@ -54,16 +54,15 @@ const Listitems = () => {
         promesa1.then((data) => {
             console.log('respuesta de promesa', data)
             setProducts(data)
-            //ocultar loader
         })
     }, [])
     
 
         return ( 
         <>
-            <h2> Productos en oferta </h2>
+            <h2> Nuestros productos </h2>
             {console.log("state products: ", products)}
-
+            
             {
             products.map( (product) => {
                 return(
@@ -71,19 +70,21 @@ const Listitems = () => {
                 )
             })}
 
-            <Container className="product-container">
+        <Container className="product-container">
+            {
                 <Grid container spacing={2}>
                     {products.map(product => {
                         return(
                             <Grid item xs={4} key={product.id}>
-                                <Item stock={product.stock} img={product.img}/>
+                                <Item data={product}/>
                             </Grid>
                         )
-                    })}
-            </Grid>
-            </Container>
+                })}
+                </Grid>
+            }
+        </Container>
         </>
         )
     }
 
-export default Listitems;
+export default ItemListContainer;

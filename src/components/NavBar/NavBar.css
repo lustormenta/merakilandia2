@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Nunito+Sans:wght@200&display=swap');
 
+.header {
+    background-color: burlywood !important;
+}
+
 .logoMeraki {
     width: 70px;
     float: left;
@@ -12,7 +16,7 @@
     font-size: 33px !important;
     font-family: 'Chilanka', cursive;
     font-weight: bold;
-    color: rgb(193, 226, 236);
+    color: rgb(83, 37, 85);
 }
 
 nav ul li {
@@ -25,7 +29,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(51, 58, 158);
+    color: rgb(83, 37, 85);
     font-weight: bold;
 }
 

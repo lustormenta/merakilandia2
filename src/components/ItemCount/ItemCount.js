@@ -19,11 +19,11 @@ export default function Product() {
     return(
         <div id="contador" >
             {console.log('Render')}
-            <button onClick={less}>Quitar</button>
+            <button className='botonMasMenos' onClick={less}>Quitar</button>
             <h4>
                 {clicks}
             </h4>
-            <button onClick={more}>Agregar</button>
+            <button className='botonMasMenos' onClick={more}>Agregar</button>
         </div>
     );
 }

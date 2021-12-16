@@ -1,0 +1,30 @@
+
+.footer {
+    margin-top: 50px;
+    background-color: rgb(224, 175, 111);
+    height: 200px;
+}
+
+.SectionsFooter{
+    display: flex;
+    justify-content: left;
+}
+
+h2{
+    text-align: left;
+    padding: 30px 44px 0px;
+}
+
+ul{
+    list-style-type: none;
+    text-align: left;
+}
+
+ul li{
+    padding: 4px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

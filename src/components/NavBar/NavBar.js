@@ -2,11 +2,12 @@ import React from "react";
 import './NavBar.css';
 import AppBar from '@mui/material/AppBar';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom'
 
 
 export default function NavBar() {
     return(
-        <AppBar position="static">
+        <AppBar className="header" position="static">
             <nav id="menu">
                 <div className="container-logo">
                     <img className="logoMeraki" src={process.env.PUBLIC_URL + "assets/logoMeraki.png"} alt="logo"/>
@@ -14,12 +15,11 @@ export default function NavBar() {
                 </div>
                 <div>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/Contact">Contact</Link></li>
+                        <li><Link to="/AboutUs">About Us</Link></li>
+                        <li><CartWidget /></li>
                     </ul>
-                    <CartWidget />
                 </div>
             </nav>
         </AppBar>

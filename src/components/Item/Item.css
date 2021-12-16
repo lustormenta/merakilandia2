@@ -4,3 +4,11 @@ h3 {
     font-family: 'Yomogi', cursive;
     font-size: 25px;
 }
+
+.btn-comprar {
+    border-radius: 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    height: 50px;
+    width: 200px;
+}
