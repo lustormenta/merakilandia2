@@ -13,7 +13,7 @@ export default function Item ({data}) {
             <b>${data.price}</b>
             <p>Stock: {data.stock}</p>
             <ItemCount />
-            <button className='btn-comprar'><Link to={`/products/${data.id}`}>Comprar</Link></button>
+            <Link to={`/products/${data.id}`}><button className='btn-comprar'>Comprar</button></Link>
         </div>
     )
 }
