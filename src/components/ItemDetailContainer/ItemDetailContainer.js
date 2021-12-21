@@ -34,6 +34,34 @@ export default function ItemDetailContainer() {
             name: 'Aros personalizados',
             price: 500,
             stock: 20
+        },
+        {
+            id: 5,
+            img: "./assets/collar1.jpg",
+            name: 'Collar 1',
+            price: 650,
+            stock: 4
+        },
+        {
+            id: 6,
+            img: "./assets/collar2.jpg",
+            name: 'Collar 2',
+            price: 600,
+            stock: 10
+        },
+        {
+            id: 7,
+            img: "./assets/collar3.jpg",
+            name: "Collar 3",
+            price: 560,
+            stock: 8
+        },
+        {
+            id: 8,
+            img: "./assets/pregunta.jpg",
+            name: 'Personalizado',
+            price: 700,
+            stock: 20
         }
     ]
         

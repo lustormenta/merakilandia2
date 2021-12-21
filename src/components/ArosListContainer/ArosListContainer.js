@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import './ItemListContainer.css';
+import './ArosListContainer.css';
 import Item from '../Item/Item.js';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
 
-const ItemListContainer = () => {
+const ArosListContainer = () => {
     const [products, setProducts] = useState([])
     const dataProduct = [
         {
@@ -60,7 +60,7 @@ const ItemListContainer = () => {
 
         return ( 
         <>
-            <h2> ❀ Nuestros productos ❀ </h2>
+            <h2> ❀ Aros ❀ </h2>
             {console.log("state products: ", products)}
             
             {
@@ -87,4 +87,4 @@ const ItemListContainer = () => {
         )
     }
 
-export default ItemListContainer;
+export default ArosListContainer;
