@@ -59,7 +59,7 @@ export default function ItemDetailContainer() {
         {
             id: 8,
             img: "./assets/pregunta.jpg",
-            name: 'Personalizado',
+            name: 'Collar personalizado',
             price: 700,
             stock: 20
         }
