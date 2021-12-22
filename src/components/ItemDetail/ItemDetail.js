@@ -9,7 +9,7 @@ const ItemDetail = ({data}) => {
                 <div className='left'>
                     <h2 className='productName'> {data.name}</h2>
                     <br/>
-                    <img className='imagenDeProducto' src= {`../${data.img}`} width={300} height={300}></img>
+                    <img className='imagenDeProducto' src= {`../${data.img}`} alt={data.name} width={300} height={300}></img>
                 </div>
                 <br/><br/>
                 <div className='right'>

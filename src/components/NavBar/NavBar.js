@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './NavBar.css';
 import AppBar from '@mui/material/AppBar';
 import CartWidget from '../CartWidget/CartWidget';
@@ -6,9 +6,26 @@ import { Link } from 'react-router-dom'
 
 
 export default function NavBar() {
-    
+    const [fixedNavBar, setFixedNavBar] = useState(false)
+
+    useEffect(() => {
+        function onScrollWindow() {
+            if(window.scrollY > 100 ){
+                setFixedNavBar(true)
+            }else{
+                setFixedNavBar(false) 
+            }
+        }
+
+        window.addEventListener('scroll', onScrollWindow)
+        //unmounth
+        return() => {
+            window.removeEventListener('scroll', onScrollWindow)
+        }
+    }, [])
+
     return(
-        <AppBar className="header" position="static">
+        <AppBar className="header" position={fixedNavBar ? "fixed" : "static"}>
             <nav id="menu">
                 <div className="container-logo">
                     <img className="logoMeraki" src={process.env.PUBLIC_URL + "assets/logoMeraki.png"} alt="logo"/>
@@ -20,9 +37,9 @@ export default function NavBar() {
                         <li><Link to="/Contact">Contact</Link></li>
                         <li><Link to="/AboutUs">About Us</Link></li>
 
-                        <div class="dropdown">
-                            <button class="dropbtn">Products</button>
-                            <div class="dropdown-content">
+                        <div className="dropdown">
+                            <button className="dropbtn">Products</button>
+                            <div className="dropdown-content">
                                 <li><Link to="/aros">Aros</Link></li>
                                 <li><Link to="/collares">Collares</Link></li>
                             </div>
