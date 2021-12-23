@@ -1,29 +1,25 @@
 import './ItemCount.css';
-import React,{useState, useEffect} from 'react'
+import React,{ useState } from 'react'
+import Button from '@mui/material/Button';
 
 
-export default function Product() {
-    const [clicks, setClicks] = useState(0);
-
-    useEffect(() => {
-        console.log('Ejecuta useEffect')
-    })
+export default function ItemCount({stock, addItem}) {
+    const [clicks, setClicks] = useState(0)
 
     const more = () => {
-        setClicks(clicks + 1);
-    };
+        if(clicks < stock) {
+            setClicks(clicks + 1)
+    }
+    }
     const less = () => {
-        setClicks(clicks - 1);
+        clicks > 0 && setClicks(clicks - 1)
     }
 
     return(
-        <div id="contador" >
-            {console.log('Render')}
-            <button className='botonMasMenos' onClick={less}>Quitar</button>
-            <h4>
-                {clicks}
-            </h4>
-            <button className='botonMasMenos' onClick={more}>Agregar</button>
+        <div id="contador" className='item-count__buttons' >
+            <Button variant='outlined' className='botonMasMenos' onClick={less}>-</Button>
+            <p>{clicks}</p>
+            <Button variant='outlined' className='botonMasMenos' onClick={more}>+</Button>
         </div>
     );
 }

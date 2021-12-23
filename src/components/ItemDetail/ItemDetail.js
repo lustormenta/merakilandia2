@@ -1,4 +1,5 @@
-import './ItemDetail.css'
+import './ItemDetail.css';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({data}) => {
     console.log('Producto filtrado', data)
@@ -16,6 +17,7 @@ const ItemDetail = ({data}) => {
                 <b>Precio : ${data.price}</b>
                 <br/>
                 <p>Stock: {data.stock} </p>
+                <ItemCount stock={data.stock}/>
                 <button className='btn-Carrito'>Agregar al carrito</button>
                 </div>
                 </div>
