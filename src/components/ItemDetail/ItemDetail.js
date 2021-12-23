@@ -1,8 +1,24 @@
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
+import React, { useState } from 'react'
 
 const ItemDetail = ({data}) => {
-    console.log('Producto filtrado', data)
+    const [quantityItem, setQuantityItem] = useState(0)
+    const [itemCart, setItemCart]= useState(
+        {
+            name: data.name,
+            id: data.id,
+            quantity: 0
+        }
+    )
+    const onAdd = (value) => {
+        console.log("items agregados: ", value)
+        itemCart.quantity = value
+    }
+
+    const sendItem = () => {
+        console.log('itemCart: ', itemCart)
+    }
     return (
         <>
             <div className='ItemDetail'>
@@ -16,9 +32,9 @@ const ItemDetail = ({data}) => {
                 <div className='right'>
                 <b>Precio : ${data.price}</b>
                 <br/>
-                <p>Stock: {data.stock} </p>
-                <ItemCount stock={data.stock}/>
-                <button className='btn-Carrito'>Agregar al carrito</button>
+                <p>Stock: {data.stock}</p>
+                <ItemCount stock={data.stock} onAdd={onAdd}/>
+                <button onClick={sendItem} className='btn-Carrito'>Agregar al carrito</button>
                 </div>
                 </div>
             </div>

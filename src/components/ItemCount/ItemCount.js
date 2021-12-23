@@ -3,12 +3,14 @@ import React,{ useState } from 'react'
 import Button from '@mui/material/Button';
 
 
-export default function ItemCount({stock, addItem}) {
+export default function ItemCount({stock, onAdd}) {
     const [clicks, setClicks] = useState(0)
 
     const more = () => {
+        
         if(clicks < stock) {
             setClicks(clicks + 1)
+            onAdd(clicks + 1)
     }
     }
     const less = () => {
