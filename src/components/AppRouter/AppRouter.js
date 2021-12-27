@@ -5,9 +5,8 @@ import HomePage from '../../Pages/HomePage/HomePage.js';
 import ContactPage from '../../Pages/ContactPage/ContactPage';
 import NotFoundPage from '../../Pages/NotFoundPage/NotFoundPage';
 import AboutUsPage from '../../Pages/AboutUsPage/AboutUsPage';
-import ItemDetailPage from '../../Pages/ItemDetailPage/ItemDetailPage';
-import CollaresListContainer from '../CollaresListContainer/CollaresListContainer';
-import ArosListContainer from '../ArosListContainer/ArosListContainer';
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 export default function AppRouter() {
     return (
@@ -17,9 +16,8 @@ export default function AppRouter() {
                 <Route path='/' element={<HomePage />} />
                 <Route path='/contact' element={<ContactPage />} />
                 <Route path='/aboutus' element={<AboutUsPage />} />
-                <Route path='/aros' element={<ArosListContainer />} />
-                <Route path='/collares' element={<CollaresListContainer />} />
-                <Route path='/products/:id' element={<ItemDetailPage />} />
+                <Route path='/product/:id' element={<ItemDetailContainer/>} />
+                <Route path='/:category' element={<ItemListContainer />} />
                 <Route path='*' element={<NotFoundPage />} />
             </Routes>
             <Footer />

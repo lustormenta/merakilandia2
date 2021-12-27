@@ -3,7 +3,7 @@ import './NavBar.css';
 import AppBar from '@mui/material/AppBar';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
-
+import Logo from '../../assets/logoMeraki.PNG'
 
 export default function NavBar() {
     const [fixedNavBar, setFixedNavBar] = useState(false)
@@ -28,7 +28,7 @@ export default function NavBar() {
         <AppBar className="header" position={fixedNavBar ? "fixed" : "static"}>
             <nav id="menu">
                 <div className="container-logo">
-                    <img className="logoMeraki" src={process.env.PUBLIC_URL + "assets/logoMeraki.png"} alt="logo"/>
+                    <img className="logoMeraki" src={Logo} alt="logo"/>
                     <h1 className="Titulo" >Merakilandia</h1>
                 </div>
                 <div>

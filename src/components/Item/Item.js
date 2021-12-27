@@ -5,8 +5,18 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function Item ({data}) {
-    
+export default function Item({data}) {
+    const [itemCart, setItemCart]= useState(
+        {
+            name: data.name,
+            id: data.id,
+            quantity: 0
+        }
+    )
+    const onAdd = (value) => {
+        console.log("items agregados: ", value)
+        itemCart.quantity = value
+    }
     return(
         //JSX
         <div>
@@ -14,8 +24,8 @@ export default function Item ({data}) {
             <h3>{data.name}</h3>
             <b>${data.price}</b>
             <p>Stock: {data.stock}</p>
-            <ItemCount stock={data.stock}/>
-            <Link to={`/products/${data.id}`}><button className='btn-comprar'>Comprar</button></Link>
+            <ItemCount stock={data.stock} onAdd={onAdd}/>
+            <Link to={`/product/${data.id}`}><button className='btn-comprar'>Comprar</button></Link>
         </div>
     )
 }

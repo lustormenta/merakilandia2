@@ -15,7 +15,7 @@ const ItemDetail = ({data}) => {
         console.log("items agregados: ", value)
         itemCart.quantity = value
     }
-
+    
     const sendItem = () => {
         console.log('itemCart: ', itemCart)
     }
