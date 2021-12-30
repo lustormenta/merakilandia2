@@ -1,12 +1,15 @@
 import './App.css';
 import AppRouter from './components/AppRouter/AppRouter';
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
   //JSX
   return ( 
-  <div className = "App" >
-    <AppRouter />
-  </div>
+    <div className = "App" >
+      <ThemeProvider>
+        <AppRouter />
+      </ThemeProvider>
+    </div>
   );
 }
 
