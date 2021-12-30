@@ -4,7 +4,6 @@ import Item from '../Item/Item.js';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { useParams } from 'react-router-dom'
-import { DuoSharp } from '@mui/icons-material';
 
 
 const ItemListContainer = () => {
@@ -124,7 +123,7 @@ const ItemListContainer = () => {
             })}
 
         <Container className="product-container">
-            
+
             {
                 <Grid container spacing={2}>
                     {products.map(product => {

@@ -6,14 +6,6 @@ div.ItemDetail {
     margin-top: 50px;
 }
 
-.btn-Carrito {
-    width: 100px;
-    border-radius: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    background-color: rgba(243, 74, 74, 0.301);
-}
-
 h2.productName {
     text-align: center;
 }

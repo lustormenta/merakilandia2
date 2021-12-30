@@ -1,9 +1,13 @@
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 import React, { useState } from 'react'
+import ItemCartButton from '../ItemCartButton/ItemCartButton';
+import reactDom from 'react-dom';
+import { fabClasses } from '@mui/material';
 
 const ItemDetail = ({data}) => {
     const [quantityItem, setQuantityItem] = useState(0)
+    const [show, setShow] = useState(true)
     const [itemCart, setItemCart]= useState(
         {
             name: data.name,
@@ -11,14 +15,18 @@ const ItemDetail = ({data}) => {
             quantity: 0
         }
     )
+
     const onAdd = (value) => {
         console.log("items agregados: ", value)
         itemCart.quantity = value
+        setShow(false)
+        
     }
     
     const sendItem = () => {
         console.log('itemCart: ', itemCart)
     }
+
     return (
         <>
             <div className='ItemDetail'>
@@ -33,8 +41,8 @@ const ItemDetail = ({data}) => {
                 <b>Precio : ${data.price}</b>
                 <br/>
                 <p>Stock: {data.stock}</p>
-                <ItemCount stock={data.stock} onAdd={onAdd}/>
-                <button onClick={sendItem} className='btn-Carrito'>Agregar al carrito</button>
+                
+                {show ? (<ItemCount stock={data.stock} onAdd={onAdd}/>) : (<ItemCartButton />)}
                 </div>
                 </div>
             </div>

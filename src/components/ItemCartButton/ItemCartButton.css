@@ -1,23 +1,4 @@
-#contador {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    border-radius: 30px;
-    width: 200px;
-}
-
-p {
-    margin: 15px;
-}
-
-.botonMasMenos {
-    border-radius: 30px;
-    font-weight: bold;
-    margin: 10px;
-    border-radius: 30px !important;
-}
-
-.btn-Carrito {
+.btn-Carritos {
     width: 100px !important;
     border-radius: 30px !important;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
@@ -25,6 +6,6 @@ p {
     color: black !important;
     background-color: rgba(103, 247, 122, 0.712) !important;
     margin-top: 10px !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 30px !important;
     text-transform: none !important;
 }

@@ -24,7 +24,6 @@ export default function Item({data}) {
             <h3>{data.name}</h3>
             <b>${data.price}</b>
             <p>Stock: {data.stock}</p>
-            <ItemCount stock={data.stock} onAdd={onAdd}/>
             <Link to={`/product/${data.id}`}><button className='btn-comprar'>Comprar</button></Link>
         </div>
     )
