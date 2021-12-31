@@ -112,7 +112,7 @@ const ItemListContainer = () => {
 
         return ( 
         <>
-            <h2> ❀ Nuestros productos ❀ </h2>
+            <h2 className='subtitulo'> ❀ Nuestros productos ❀ </h2>
             {console.log("state products: ", products)}
             
             {

@@ -2,17 +2,16 @@ import { createContext, useState } from "react";
 
 const ThemeContext = createContext();
 
-const ThemeProvider = ({chidren}) => {
+const ThemeProvider = ({children}) => {
     const [theme, setTheme] = useState(false)
     const changeTheme = () => {
         console.log('cambio de tema desde contexto')
+        setTheme(!theme)
     }
-
     const data = {
         theme,
         changeTheme
     }
-
     return(
         <ThemeContext.Provider value={data} >
             {children}

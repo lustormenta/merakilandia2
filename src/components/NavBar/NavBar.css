@@ -1,7 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Nunito+Sans:wght@200&display=swap');
 
-.header {
+#header.theme-light  {
     background-color: burlywood !important;
+}
+
+#header.theme-dark {
+    background-color: rgb(20, 18, 18) !important;
+}
+
+.theme-dark li a {
+    color: rgb(221, 201, 164) !important;
+}
+
+.theme-dark .Titulo {
+    color: wheat;
+}
+
+.theme-dark .dropbtn {
+    color: wheat;
+}
+
+.theme-dark .dropdown-content {
+    background-color: rgb(26, 24, 24);
+}
+
+.theme-dark .dropdown-content a:hover {
+    background-color: rgb(59, 51, 51);
+}
+
+.theme-dark .cart-container svg{
+    color: wheat ;
 }
 
 .logoMeraki {
@@ -35,7 +63,7 @@ nav ul li a {
 
 
 .dropbtn {
-    background-color: burlywood !important;
+    background-color: rgba(222, 184, 135, 0) !important;
     text-decoration: none;
     color: rgb(83, 37, 85);
     font-weight: bold;
