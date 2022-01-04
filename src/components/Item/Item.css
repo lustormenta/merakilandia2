@@ -13,3 +13,17 @@ h3 {
     width: 200px;
     margin-bottom: 30px;
 }
+
+.fotos{
+    border: groove rgb(206, 164, 109) 10px;
+}
+
+.theme-dark .fotos {
+    border: groove rgb(99, 83, 63) 10px;
+}
+
+.theme-dark .h3 {
+    font-family: 'Yomogi', cursive;
+    font-size: 25px;
+    color: wheat;
+}

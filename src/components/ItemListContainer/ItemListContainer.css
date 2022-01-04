@@ -6,3 +6,11 @@
     font-family: 'Chilanka', cursive;
     font-weight: bold;
 }
+
+.subtitulo {
+    text-align: center;
+    border-style: none none double none;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}

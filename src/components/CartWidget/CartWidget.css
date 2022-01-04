@@ -1,3 +1,19 @@
 .cart-container svg{
 color: black ;
 }
+
+.item-cart-list {
+    background-color: rgb(214, 245, 179);
+    color: black;
+    position: absolute;
+    padding: 20px;
+    width: 250px;
+    height: auto;
+    right: 10px;
+    top: 105px;
+}
+
+span.span {
+    padding-left: 15px;
+}
+

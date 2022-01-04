@@ -8,20 +8,23 @@ import AboutUsPage from '../../Pages/AboutUsPage/AboutUsPage';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import CartPage from '../../Pages/CartPage/CartPage';
+import { CartProvider } from '../../context/CartContext';
 
 export default function AppRouter() {
     return (
         <BrowserRouter>
-            <NavBar/>
-            <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/contact' element={<ContactPage />} />
-                <Route path='/aboutus' element={<AboutUsPage />} />
-                <Route path='/product/:id' element={<ItemDetailContainer/>} />
-                <Route path='/cart' element={<CartPage />} />
-                <Route path='/:category' element={<ItemListContainer />} />
-                <Route path='*' element={<NotFoundPage />} />
-            </Routes>
+            <CartProvider>
+                <NavBar/>
+                <Routes>
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/contact' element={<ContactPage />} />
+                    <Route path='/aboutus' element={<AboutUsPage />} />
+                    <Route path='/product/:id' element={<ItemDetailContainer/>} />
+                    <Route path='/cart' element={<CartPage />} />
+                    <Route path='/:category' element={<ItemListContainer />} />
+                    <Route path='*' element={<NotFoundPage />} />
+                </Routes>
+            </CartProvider>
             <Footer />
         </BrowserRouter>
     )
