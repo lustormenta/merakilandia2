@@ -5,6 +5,7 @@ import CartContext from '../../context/CartContext';
 
 const CartWidget = () => {
     const [showCart, setShowCart] = useState(false)
+    
     useEffect(() => {
         console.log('products CartWidget ', products)
     })
@@ -22,7 +23,7 @@ const CartWidget = () => {
                     return(
                         <div className='item-cart-list'>
                             <div className='item-cart-img'>
-                                <img src={`./src/${product.img}`} />
+                                <img src={`../${product.img}`} />
                             </div>
                             <p>nombre: {product.name}</p>
                             <p> precio: ${product.price}</p>

@@ -7,34 +7,21 @@ import CartContext from '../../context/CartContext';
 export default function ItemDetail({ data }) {
     const [quantityItem, setQuantityItem] = useState(0)
     const { addProducts, products } = useContext(CartContext)
-    const [show, setShow] = useState(true)
-    const [itemCart, setItemCart]= useState(
+    //const [show, setShow] = useState(true)
+
+    const onAdd = (value) => {  
+        //setShow(false)
+        
+        addProducts (
         {
             name: data.name,
             id: data.id,
             price: data.price,
             image: data.img,
-            quantity: 0
-        }
-    )
-    
-
-    const onAdd = (value, name) => {
-        itemCart.quantity = value
-        addProducts({
-            name: data.name,
-            id: data.id,
-            price: data.price,
-            image: data.img,
             quantity: value
-        })
-        //setShow(false)
-        console.log(name)
-    }
-    
-    const sendItem = () => {
-        onAdd()
-        console.log('productos agregados: ', products)
+        }
+        )
+        console.log('Hice click: ', products)
     }
 
     return (
@@ -53,7 +40,6 @@ export default function ItemDetail({ data }) {
                             <br/>
                             <p>Stock: {data.stock}</p>
                             <ItemCount stock={data.stock} onAdd={onAdd}/>
-                            <button className='btn-Carrito' onClick={sendItem}>Agregar al Carrito</button>
                         </div>
                     </div>
 

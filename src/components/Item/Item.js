@@ -14,10 +14,6 @@ export default function Item({data}) {
             quantity: 0
         }
     )
-    const onAdd = (value) => {
-        console.log("items agregados: ", value)
-        itemCart.quantity = value
-    }
     return(
         //JSX
         <div className={theme ? 'theme-dark' : 'theme-light'}>
