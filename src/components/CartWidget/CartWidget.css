@@ -5,12 +5,13 @@ color: black ;
 .item-cart-list {
     background-color: rgb(214, 245, 179);
     color: black;
-    position: absolute;
+    position: relative;
     padding: 20px;
     width: 250px;
     height: auto;
     right: 10px;
-    top: 105px;
+    top: 20px;
+    z-index: 100;
 }
 
 span.span {

@@ -11,7 +11,6 @@ export default function ItemDetail({ data }) {
 
     const onAdd = (value) => {  
         //setShow(false)
-        
         addProducts (
         {
             name: data.name,

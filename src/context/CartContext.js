@@ -6,28 +6,30 @@ const CartProvider = ({children}) => {
     const [products, setProducts] = useState([]);
 
     const addProducts = (product) => {
-
-        products.map(product => {
-            if (products.hasOwnProperty(product.id)) {
-                product.quantity = addProducts[product.id].quantity + 1
-            }
-        })
-
+        if (products.length === 0) {
             setProducts([...products, product])
-            console.log('PRODUCTOS', products)
+        } else {
+            products.map(producto => {
+                if (producto.id === product.id) {
+                    producto.quantity = producto.quantity + product.quantity
+                    setProducts([...products])
+                } else {
+                    setProducts([...products, product])
+                }
+            })
+        }
+    console.log('PRODUCTOS', products)}
+
+    const data = {
+        products,
+        addProducts
     }
 
-
-const data = {
-    products,
-    addProducts
-}
-
-return(
-    <CartContext.Provider value={data} >
-        {children}
-    </CartContext.Provider>
-)
+    return(
+        <CartContext.Provider value={data} >
+            {children}
+        </CartContext.Provider>
+    )
 }
 export { CartProvider }
 export default CartContext
