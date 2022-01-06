@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Cute+Font&family=Nunito+Sans:wght@200&family=Yomogi&display=swap');
 
 .tituloTest{
     color: black;
@@ -13,4 +14,9 @@
     width: 300px;
     margin: 0 auto;
     margin-bottom: 20px;
+}
+
+.loading {
+    font-family: 'Cute Font', cursive;
+    font-size: 30px;
 }

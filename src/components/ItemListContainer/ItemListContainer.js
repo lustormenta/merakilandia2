@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom'
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
     const { category } = useParams()
+    const [loaded, setLoaded] = useState(true)
     const dataProduct = [
         {
             id: 1,
@@ -108,11 +109,17 @@ const ItemListContainer = () => {
             
         })
     }, [])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoaded(false);
+        }, 2000)  
+    }, []);
     
 
         return ( 
         <>
-            <h2 className='subtitulo'> ❀ Nuestros productos ❀ </h2>
+            {loaded ? <h2 className='loading'>ʕ•́ᴥ•̀ʔっCargando...</h2> : <h2 className='subtitulo'> ❀ Nuestros productos ❀ </h2>}
             {console.log("state products: ", products)}
             
             {
