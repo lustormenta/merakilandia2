@@ -20,10 +20,27 @@ const CartProvider = ({children}) => {
         }
     console.log('PRODUCTOS', products)}
 
+    const removeProducts = (item) => {
+            // const productoEliminado = products.filter(prod => {
+            //     prod.id !== item.id
+            // })
+            const found = products.filter (x=> x.id !== item.id)
+            setProducts(found)
+            console.log('hola')
+        }
+
+    const eliminarTodo = () => {
+        setProducts([])
+    }
+
     const data = {
         products,
-        addProducts
+        addProducts,
+        removeProducts,
+        eliminarTodo
     }
+
+    
 
     return(
         <CartContext.Provider value={data} >
@@ -33,3 +50,4 @@ const CartProvider = ({children}) => {
 }
 export { CartProvider }
 export default CartContext
+export const removeProducts = true
