@@ -1,7 +1,7 @@
 //Hooks
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-//Componentes
+//Components
 import ItemDetail from '../ItemDetail/ItemDetail'
 //Firebase
 import { doc, getDoc } from 'firebase/firestore'

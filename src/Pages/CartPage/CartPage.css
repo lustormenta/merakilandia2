@@ -1,5 +1,5 @@
-#carrito {
-    margin: 0 auto;
-    margin-top: 50px;
-    padding: 10%;
+.grid-total-price {
+    border: 4px solid black;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }

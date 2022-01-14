@@ -1,7 +1,7 @@
 //Hooks
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-//Componentes
+//Components
 import './ItemListContainer.css';
 import Item from '../Item/Item.js';
 //Material Ui
@@ -9,14 +9,14 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 //Firebase
 import db from '../../firebase';
-import { collection, getDocs } from 'firebase/firestore/lite';
+import { collection, getDocs } from 'firebase/firestore';
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
     const { category } = useParams()
     const [loaded, setLoaded] = useState(true)
 
-    async function productos(db)  {
+    async function productos()  {
         const productsCol = collection(db, 'products');
         const productsSnapshot = await getDocs(productsCol);
         const productsList = productsSnapshot.docs.map(doc => {
@@ -46,7 +46,7 @@ const ItemListContainer = () => {
         useEffect(() => {
             setTimeout(() => {
                 setLoaded(false);
-            }, 2000)  
+            }, 1000)  
         }, []);
 
     return ( 

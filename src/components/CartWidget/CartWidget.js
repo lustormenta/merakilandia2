@@ -1,16 +1,15 @@
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import './CartWidget.css';
 import React, {useState, useEffect, useContext} from 'react'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import './CartWidget.css'
 import CartContext from '../../context/CartContext';
+import ModalCart from '../ModalCart/ModalCart';
 
 const CartWidget = () => {
-    const [showCart, setShowCart] = useState(false)
-    const {removeProducts, eliminarTodo} = useContext(CartContext)
-
+    const [showCart, setShowCart ] = useState(false)
     useEffect(() => {
-        console.log('products CartWidget ', products)
+        //console.log("products cartWidget" , products)
     })
-    const {products} = useContext(CartContext)
+    const {products, totalPrice} = useContext(CartContext)
 
     const openCart = () => {
         setShowCart(!showCart)
@@ -19,26 +18,9 @@ const CartWidget = () => {
     return(
         <div className="cart-container">
             <ShoppingCartIcon onClick={openCart}/>
-            <div className={`box-cart ${showCart && 'active'}`}>
-                {products.map((product) => {
-                    return(
-                        <div className='item-cart-list'>
-                            <div className='item-cart-img'>
-                                <img src={`../${product.img}`} />
-                            </div>
-                            <p>nombre: {product.name}</p>
-                            <p> precio: ${product.price}</p>
-                            <span className='span'>Cant: {product.quantity}</span>
-                            <removeProducts />
-                            <button className='btn-remove' onClick={()=> removeProducts(product) } >Eliminar</button>
-                            <hr></hr>
-                            <button onClick={() => eliminarTodo() }>Eliminar todo</button>
-                        </div>
-                    )
-                })}
-            </div>
+            {showCart && <ModalCart products={products} total={totalPrice}/>}
         </div>
     )
 }
 
-export default CartWidget;
+export default CartWidget
