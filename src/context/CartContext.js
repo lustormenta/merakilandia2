@@ -1,9 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
+const productsFromLocalStorage = JSON.parse(localStorage.getItem('productos' || "[]"))
+
 const CartProvider = ({children}) => {
-    const [products, setProducts] = useState(JSON.parse(localStorage.getItem("productos")) || [])
+    const [products, setProducts] = useState(productsFromLocalStorage)
     const [totalPrice, setTotalPrice] = useState(0)
 
     const addProducts = (product) => {
@@ -12,15 +14,22 @@ const CartProvider = ({children}) => {
         setTotalPrice(totalPrice + product.price * product.quantity)
     }
 
+    const total = products.reduce((acc,el)=>acc+(el.price * el.quantity),0)
+
+
     const addProductStorage = (product) => {
         localStorage.setItem("productos", JSON.stringify([...products, product]))
     }
 
     const removeProducts = (item) => {
-        const found = products.filter (x=> x.id !== item.id)
-        setProducts(found)
-        console.log('hola')
+        setProducts(products.filter(x=> x.id !== item.id))
     }
+
+    useEffect(() => {
+        localStorage.setItem("products", JSON.stringify(products))
+        setTotalPrice(total)
+    }, [products]);
+    
 
 const eliminarTodo = () => {
     setProducts([])
@@ -31,7 +40,8 @@ const eliminarTodo = () => {
         addProducts,
         totalPrice,
         removeProducts,
-        eliminarTodo
+        eliminarTodo,
+        total
     }
     
     return(

@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom'
 import { Button } from '@mui/material'
 import CartContext from '../../context/CartContext';
 
-export default function ModalCart({products, total}) {
-    const {removeProducts, eliminarTodo} = useContext(CartContext)
+export default function ModalCart({products}) {
+    
+    const {removeProducts, eliminarTodo, total} = useContext(CartContext)
 
     return(
         <div className={`box-cart active`}>

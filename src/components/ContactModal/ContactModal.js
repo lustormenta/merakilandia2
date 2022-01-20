@@ -16,14 +16,14 @@ import { collection, addDoc } from 'firebase/firestore';
 export default function ContactModal({open, handleClose, products, total}) {
 
     const [formData, setFormData] = useState({
-        nombre : '',
-        telefono : '',
+        nombre: '',
+        telefono: '',
         mail: ''
     })
     const [orderId, setOrderId] = useState(null)
 
     const handleChange = (e) => {
-        const {name, value} = e.target
+        const {name, value} = e.target;
         setFormData({...formData, [name] : value})
     }
 
@@ -42,6 +42,7 @@ export default function ContactModal({open, handleClose, products, total}) {
         setOrderId(orden.id)
     }
 
+
     return (
         <div>
             <Dialog
@@ -54,7 +55,7 @@ export default function ContactModal({open, handleClose, products, total}) {
                     <>
                         <DialogTitle>Completa tus datos</DialogTitle>
                             <DialogContent>
-                                <Box component="form" noValidate autoComplete="off" className="form-container">
+                                <Box component="form" noValidate autoComplete="off" className="form-container" >
                                     <TextField label="Nombre" name="nombre" variant="outlined" value={formData.nombre} onChange={handleChange}/>
                                     <TextField label="Telefono" name="telefono" variant="outlined" value={formData.telefono} onChange={handleChange}/>
                                     <TextField label="Mail" name="mail" variant="outlined" value={formData.mail} onChange={handleChange}/>

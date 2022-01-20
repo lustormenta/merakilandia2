@@ -9,13 +9,11 @@ export default function ItemCount({stock, onAdd}) {
         
         if(clicks < stock) {
             setClicks(clicks + 1)
-            
         }
     }
     const less = () => {
         if (clicks > 0) {
             setClicks(clicks - 1)
-            
         }
     }
 

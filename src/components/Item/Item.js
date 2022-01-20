@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom'
 import ThemeContext from '../../context/ThemeContext'
 
 
-
 export default function Item({data}) {
     const {theme} = useContext(ThemeContext)
-    
+    // const {name, price, img, id, stock} = data
     return(
         //JSX
         <div className={theme ? 'theme-dark' : 'theme-light'}>
