@@ -5,7 +5,7 @@ import CartContext from '../../context/CartContext';
 
 export default function ModalCart({products}) {
     
-    const {removeProducts, eliminarTodo, total} = useContext(CartContext)
+    const {removeProducts, eliminarTodo, totalPrice} = useContext(CartContext)
 
     return(
         <div className={`box-cart active`}>
@@ -29,7 +29,7 @@ export default function ModalCart({products}) {
                         )
                     })}
                     <div className='container-finish-buy'>
-                        <p>Total ${total}</p>
+                        <p>Total: $&nbsp;{totalPrice}</p>
                         <Button onClick={() => eliminarTodo() }>Eliminar todo</Button>
                         <Link to='/cart'>
                             <Button>FINALIZAR COMPRA</Button>
