@@ -1,33 +1,37 @@
 import { createContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
-
-const productsFromLocalStorage = JSON.parse(localStorage.getItem('productos' || "[]"))
+const productsFromLocalStorage = JSON.parse(localStorage.getItem('products' || "[]"))
 
 const CartProvider = ({children}) => {
     const [products, setProducts] = useState(productsFromLocalStorage)
-    const [totalPrice, setTotalPrice] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0);
 
     const addProducts = (product) => {
-        setProducts([...products, product])
-        addProductStorage(product)
-        setTotalPrice(totalPrice + product.price * product.quantity)
+        let exist = products.find(prod => prod.id === product.id)
+        exist ?
+        setProducts(products.map(
+            prod=> prod.id === product.id ?
+            {...exist, quantity: exist.quantity + product.quantity}
+            :
+            prod))
+            :
+            setProducts(carrito=> [...carrito, product]);
+        localStorage.setItem('products', JSON.stringify(product))
     }
 
-    const total = products.reduce((acc,el)=>acc+(el.price * el.quantity),0)
+    const total = products.reduce((acc, el)=> acc + (el.quantity * el.price),0)
 
 
-    const addProductStorage = (product) => {
-        localStorage.setItem("productos", JSON.stringify([...products, product]))
-    }
+
 
     const removeProducts = (item) => {
         setProducts(products.filter(x=> x.id !== item.id))
     }
 
     useEffect(() => {
-        localStorage.setItem("products", JSON.stringify(products))
         setTotalPrice(total)
+        localStorage.setItem("products", JSON.stringify(products))
     }, [products]);
     
 
@@ -41,7 +45,6 @@ const eliminarTodo = () => {
         totalPrice,
         removeProducts,
         eliminarTodo,
-        total
     }
     
     return(
