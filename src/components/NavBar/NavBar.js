@@ -44,10 +44,10 @@ export default function NavBar() {
                         <li>
                         <div className="dropdown">
                             <button className="dropbtn">Products</button>
-                            <div className="dropdown-content">
+                            <ul className="dropdown-content">
                                 <li><Link to="/aros">Aros</Link></li>
                                 <li><Link to="/collares">Collares</Link></li>
-                            </div>
+                            </ul>
                         </div>
                         </li>
                         <li><Link to="/">Home</Link></li>
