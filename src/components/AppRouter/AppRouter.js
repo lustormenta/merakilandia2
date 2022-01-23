@@ -24,8 +24,8 @@ export default function AppRouter() {
                     <Route path='/:category' element={<ItemListContainer />} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Routes>
+                <Footer />
             </CartProvider>
-            <Footer />
         </BrowserRouter>
     )
 }

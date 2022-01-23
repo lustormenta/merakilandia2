@@ -1,22 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Cute+Font&family=Nunito+Sans:wght@200&family=Yomogi&display=swap');
 
-.tituloTest{
-    color: black;
+.theme-light .subtitulo {
     text-align: center;
-    font-size: 33px !important;
-    font-family: 'Chilanka', cursive;
-    font-weight: bold;
-}
-
-.subtitulo {
-    text-align: center;
-    border-style: none none double none;
     width: 300px;
     margin: 0 auto;
     margin-bottom: 20px;
+    padding-top: 30px;
 }
 
-.loading {
+.theme-dark .subtitulo {
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding-top: 30px;
+}
+
+.theme-light .loading {
     font-family: 'Cute Font', cursive;
     font-size: 30px;
+}
+
+.theme-dark .loading {
+    font-family: 'Cute Font', cursive;
+    font-size: 30px;
+}
+
+#products.theme-light {
+    text-shadow: 1px 2px 4px rgb(233, 151, 43);
+}
+
+#products.theme-dark {
+    background-color: rgb(92, 90, 90);
+    color: rgb(212, 212, 211);
+    text-shadow: 1px 2px 4px black
 }

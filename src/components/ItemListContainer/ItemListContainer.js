@@ -1,9 +1,10 @@
 //Hooks
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 //Components
 import './ItemListContainer.css';
 import Item from '../Item/Item.js';
+import ThemeContext from '../../context/ThemeContext';
 //Material Ui
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -12,6 +13,7 @@ import db from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 
 const ItemListContainer = () => {
+    const {theme} = useContext(ThemeContext)
     const [products, setProducts] = useState([])
     const { category } = useParams()
     const [loaded, setLoaded] = useState(true)
@@ -50,7 +52,7 @@ const ItemListContainer = () => {
         }, []);
 
     return ( 
-        <>
+        <div id='products' className={theme ? 'theme-dark' : 'theme-light'}>
             {loaded ? <h2 className='loading'>ʕ•́ᴥ•̀ʔっCargando...</h2> : <h2 className='subtitulo'> ❀ Nuestros productos ❀ </h2>}
             <Container className="product-container">
                 <Grid container spacing={2}>
@@ -63,7 +65,7 @@ const ItemListContainer = () => {
                     })}
                 </Grid>
             </Container>
-        </>
+        </div>
     )
 }
 

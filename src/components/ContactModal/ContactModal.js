@@ -21,6 +21,9 @@ export default function ContactModal({open, handleClose, products, total}) {
         mail: ''
     })
     const [orderId, setOrderId] = useState(null)
+    let date = new Date();
+    let dateArgentina = date.toLocaleDateString("es-ES");
+    let horaArgentina = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -32,9 +35,19 @@ export default function ContactModal({open, handleClose, products, total}) {
         order.buyer = formData
         order.items = products
         order.total = total
+        order.time = `El día ${dateArgentina} a las ${horaArgentina}`
         
         pushOrder(order)
+        console.log(order)
+        
     }
+
+    const nameValidation =()=>{
+        const validation =/^[a-z]+\s[a-z]+$/i
+        const util = /nicolas/
+        const result = validation.test(util)
+    }
+    nameValidation()
 
     const pushOrder = async(order) => {
         const orderFirebase = collection(db, 'ordenes')
@@ -56,9 +69,9 @@ export default function ContactModal({open, handleClose, products, total}) {
                         <DialogTitle>Completa tus datos</DialogTitle>
                             <DialogContent>
                                 <Box component="form" noValidate autoComplete="off" className="form-container" >
-                                    <TextField label="Nombre" name="nombre" variant="outlined" value={formData.nombre} onChange={handleChange}/>
-                                    <TextField label="Telefono" name="telefono" variant="outlined" value={formData.telefono} onChange={handleChange}/>
-                                    <TextField label="Mail" name="mail" variant="outlined" value={formData.mail} onChange={handleChange}/>
+                                    <TextField label="Nombre" name="nombre" variant="outlined" value={formData.nombre} required onChange={handleChange}/>
+                                    <TextField label="Telefono" name="telefono" variant="outlined" value={formData.telefono} required onChange={handleChange}/>
+                                    <TextField label="Mail" name="mail" variant="outlined" value={formData.mail} required onChange={handleChange}/>
                                     <Button variant="outlined" onClick={sendOrder}>Finalizar Compra</Button>
                                 </Box>
                         </DialogContent>

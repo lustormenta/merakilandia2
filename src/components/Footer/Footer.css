@@ -1,28 +1,57 @@
 
-.footer {
+#footer.theme-light {
     background-color: rgb(224, 175, 111);
 }
 
-.SectionsFooter{
+#footer.theme-dark {
+    background-color: rgb(20, 18, 18);
+}
+
+.theme-light .SectionsFooter{
     display: flex;
     justify-content: left;
 }
 
-h2{
+.theme-dark .SectionsFooter {
+    display: flex;
+    justify-content: left;
+}
+
+.theme-light .text{
     text-align: left;
     padding: 30px 44px 0px;
 }
 
-ul{
+.theme-dark .text {
+    text-align: left;
+    padding: 30px 44px 0px;
+    color: gainsboro;
+}
+
+.theme-light .ul{
     list-style-type: none;
     text-align: left;
 }
 
-ul li{
+.theme-dark .ul{
+    list-style-type: none;
+    text-align: left;
+}
+
+.theme-light .ul .lista{
     padding: 4px;
 }
 
-a{
+.theme-dark .ul .lista{
+    padding: 4px;
+}
+
+.theme-light .a{
     text-decoration: none;
     color: black;
+}
+
+.theme-dark .a{
+    text-decoration: none;
+    color: white;
 }

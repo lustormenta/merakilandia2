@@ -22,7 +22,6 @@ export default function ModalCart({products}) {
                                 <p>{product.name}</p>
                                 <p>{product.price}</p>
                                 <span>Cant: {product.quantity}</span>
-                                <removeProducts />
                                 <button className='btn-remove' onClick={()=> removeProducts(product) } >Eliminar</button>
                                 <hr></hr>
                             </div>
