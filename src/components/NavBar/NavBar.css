@@ -4,6 +4,9 @@
     background-color: burlywood !important;
 }
 
+@media only screen and (max-width: 1228px) {
+    
+}
 #header.theme-dark {
     background-color: rgb(20, 18, 18) !important;
 }
@@ -40,6 +43,7 @@
 
 .Titulo {
     padding-left: 30px;
+    padding-top: 30px;
     float: left;
     font-size: 33px !important;
     font-family: 'Chilanka', cursive;
@@ -59,6 +63,10 @@ nav ul li a {
     text-decoration: none;
     color: rgb(83, 37, 85);
     font-weight: bold;
+}
+
+.list {
+    padding-top: 20px;
 }
 
 

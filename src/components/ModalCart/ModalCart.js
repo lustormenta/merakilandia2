@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import {Link} from 'react-router-dom'
 import { Button } from '@mui/material'
 import CartContext from '../../context/CartContext';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function ModalCart({products}) {
     
@@ -10,7 +11,7 @@ export default function ModalCart({products}) {
     return(
         <div className={`box-cart active`}>
                 {products.length === 0 ? (
-                    <h2>No hay productos agregados</h2>
+                    <h2 className='cartVacio'>No hay productos agregados</h2>
                     ) : (
                     <>
                     {products.map((product) => {
@@ -22,7 +23,7 @@ export default function ModalCart({products}) {
                                 <p>{product.name}</p>
                                 <p>{product.price}</p>
                                 <span>Cant: {product.quantity}</span>
-                                <button className='btn-remove' onClick={()=> removeProducts(product) } >Eliminar</button>
+                                <CloseIcon className='btn-remove' onClick={()=> removeProducts(product) } >X</CloseIcon>
                                 <hr></hr>
                             </div>
                         )

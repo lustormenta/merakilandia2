@@ -22,9 +22,6 @@ const CartProvider = ({children}) => {
 
     const total = products.reduce((acc, el)=> acc + (el.quantity * el.price),0)
 
-
-
-
     const removeProducts = (item) => {
         setProducts(products.filter(x=> x.id !== item.id))
     }
@@ -35,7 +32,7 @@ const CartProvider = ({children}) => {
     }, [products]);
     
 
-const eliminarTodo = () => {
+    const eliminarTodo = () => {
     setProducts([])
 }
 

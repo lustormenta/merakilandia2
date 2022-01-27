@@ -36,7 +36,7 @@ export default function NavBar() {
                     <h1 className="Titulo" >Merakilandia</h1>
                 </div>
                 <div>
-                    <ul>
+                    <ul className="list">
                         <li><CartWidget /></li>
                         <li><SwitchTheme changeTheme={changeTheme}/></li>
                         <li><Link to="/Contact">Contact</Link></li>

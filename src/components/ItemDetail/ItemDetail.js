@@ -2,9 +2,10 @@ import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 import React, { useState, useContext } from 'react'
 import CartContext from '../../context/CartContext';
-
+import ThemeContext from '../../context/ThemeContext'
 
 export default function ItemDetail({ data }) {
+    const {theme} = useContext(ThemeContext)
     const [quantityItem, setQuantityItem] = useState(0)
     const { addProducts, products } = useContext(CartContext)
     //const [show, setShow] = useState(true)
@@ -24,8 +25,8 @@ export default function ItemDetail({ data }) {
     }
 
     return (
-        <>
-            <div className='ItemDetail'>
+        <div id='detalle' className={theme ? 'theme-dark' : 'theme-light'}>
+            <div id='ItemDetail' className={theme ? 'theme-dark' : 'theme-light'}>
 
                     <div className='ItemContenedor'>
                         <div className='left'>
@@ -41,9 +42,8 @@ export default function ItemDetail({ data }) {
                             <ItemCount stock={data.stock} onAdd={onAdd}/>
                         </div>
                     </div>
-
             </div>
-        </>
+            </div>
     )
 }
 

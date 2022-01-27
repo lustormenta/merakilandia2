@@ -27,3 +27,11 @@ h3 {
     font-size: 25px;
     color: wheat;
 }
+
+
+.item-container{
+    width: 325px;
+    height: 570px;
+    margin-block: 20px;
+    margin-inline: 30px;
+}

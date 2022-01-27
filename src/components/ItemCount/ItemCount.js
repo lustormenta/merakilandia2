@@ -1,8 +1,11 @@
 import './ItemCount.css';
-import React,{ useState } from 'react'
+import React,{ useState, useContext } from 'react'
 import Button from '@mui/material/Button';
+import ThemeContext from "../../context/ThemeContext";
+
 
 export default function ItemCount({stock, onAdd}) {
+    const { theme, changeTheme} = useContext(ThemeContext)
     const [clicks, setClicks] = useState(0)
 
     const more = () => {
@@ -22,7 +25,7 @@ export default function ItemCount({stock, onAdd}) {
     }
 
     return(
-        <div>
+        <div id='mas-menos' className={theme ? 'theme-dark' : 'theme-light'}>
         <div id="contador" className='item-count__buttons' >
             <Button variant='outlined' className='botonMasMenos' onClick={less}>-</Button>
             <p>{clicks}</p>

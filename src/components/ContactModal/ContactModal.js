@@ -64,7 +64,7 @@ export default function ContactModal({open, handleClose, products, total}) {
                 open={open} 
                 className="modal-contact-data"
             >
-                {orderId != null ? <h2>La orden se genero exitosamente. Gracias por su compra!<iframe src="https://giphy.com/embed/IcJ6n6VJNjRNS" width="350" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-dancing-happy-IcJ6n6VJNjRNS"></a></p></h2> :
+                {orderId != null ? <h2 className='iframe'>La orden se genero exitosamente.<iframe className='gatito' src="https://giphy.com/embed/IcJ6n6VJNjRNS" width="100" height="100" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-dancing-happy-IcJ6n6VJNjRNS"></a></p> Gracias por su compra!♡</h2> :
                     <>
                         <DialogTitle>Completa tus datos</DialogTitle>
                             <DialogContent>

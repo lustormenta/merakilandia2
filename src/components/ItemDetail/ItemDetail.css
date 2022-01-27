@@ -1,12 +1,35 @@
+#detalle.theme-light {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
 
-div.ItemDetail {
+#detalle.theme-dark {
+    background-color: rgb(92, 90, 90);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#ItemDetail.theme-light {
     margin: 0 auto;
     width: 50%;
     border: 3px solid;
-    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#ItemDetail.theme-dark {
+    background-color: rgb(61, 60, 60);
+    color: wheat;
+    text-shadow: 1px 2px 4px black;
+    margin: 0 auto;
+    width: 50%;
+    border: 3px solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 h2.productName {
+    padding-top: 20px;
     text-align: center;
 }
 

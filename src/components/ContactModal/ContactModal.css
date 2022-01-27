@@ -17,3 +17,9 @@
 .form-container button:hover {
     color: black !important;
 }
+
+.iframe {
+    font-size: 20px;
+    display: flex;
+    width: 400px;
+}

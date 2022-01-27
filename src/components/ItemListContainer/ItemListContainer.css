@@ -28,10 +28,39 @@
 
 #products.theme-light {
     text-shadow: 1px 2px 4px rgb(233, 151, 43);
+    margin: 0;
 }
 
 #products.theme-dark {
+    margin: 0;
     background-color: rgb(92, 90, 90);
     color: rgb(212, 212, 211);
     text-shadow: 1px 2px 4px black
+}
+
+.theme-light .loading {
+    padding: 20px;
+}
+
+.theme-dark .loading {
+    padding: 20px;
+}
+
+.item-list-container{
+        width: 90%;
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(325px,1fr));
+        grid-auto-rows: minmax(570px, auto);
+        gap: 35px;
+        padding: 20px;
+        grid-auto-flow: dense;
+}
+
+@media only screen and (max-width:780px){
+    .items-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
