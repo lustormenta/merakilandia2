@@ -149,7 +149,7 @@
     }
 
     .iconos {
-        float: left;
+        float: l;
         display: flex;
         justify-content: space-between;
         width: 150px;
@@ -160,3 +160,8 @@
     }
 }
 
+@media only screen and (max-width: 780px){
+    .topnav{
+        display: flex;
+    }
+}

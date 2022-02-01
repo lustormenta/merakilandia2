@@ -13,29 +13,29 @@ export default function ModalCart({products}) {
                 {products.length === 0 ? (
                     <h2 className='cartVacio'>No hay productos agregados</h2>
                     ) : (
-                    <>
-                    {products.map((product) => {
-                        return(
-                            <div className='item-cart-list' key={product.id}>
-                                <div className='item-cart-img'>
-                                    <img src={`../assets/${product.image}`} />
+                    <div className='boxContainer'>
+                        {products.map((product) => {
+                            return(
+                                <div className='item-cart-list' key={product.id}>
+                                    <div className='item-cart-img'>
+                                        <img src={`../assets/${product.image}`} />
+                                    </div>
+                                    <p>{product.name}</p>
+                                    <p>{product.price}</p>
+                                    <span>Cant: {product.quantity}</span>
+                                    <CloseIcon className='btn-remove' onClick={()=> removeProducts(product) } >X</CloseIcon>
+                                    <hr></hr>
                                 </div>
-                                <p>{product.name}</p>
-                                <p>{product.price}</p>
-                                <span>Cant: {product.quantity}</span>
-                                <CloseIcon className='btn-remove' onClick={()=> removeProducts(product) } >X</CloseIcon>
-                                <hr></hr>
-                            </div>
-                        )
-                    })}
-                    <div className='container-finish-buy'>
-                        <p>Total: $&nbsp;{totalPrice}</p>
-                        <Button onClick={() => eliminarTodo() }>Eliminar todo</Button>
-                        <Link to='/cart'>
-                            <Button>FINALIZAR COMPRA</Button>
-                        </Link>
+                            )
+                        })}
+                        <div className='container-finish-buy'>
+                            <p>Total: $&nbsp;{totalPrice}</p>
+                            <Button onClick={() => eliminarTodo() }>Eliminar todo</Button>
+                            <Link to='/cart'>
+                                <Button>FINALIZAR COMPRA</Button>
+                            </Link>
+                        </div>
                     </div>
-                    </>
                 ) }
             </div>
     )    

@@ -38,24 +38,24 @@ export default function NavBar() {
     return(
         <div id="myTopnav" className={`topnav ${theme ? 'theme-dark' : 'theme-light'}`} position={fixedNavBar ? "fixed" : "static"}>
             <div className="container-logo">
-                <Link to='/'><h1 className="Titulo" >Merakilandia</h1></Link>
+                <Link to='/' className="navbar--link"><h1 className="Titulo" >Merakilandia</h1></Link>
             </div>
             <div className="iconos">
             <CartWidget />
             <SwitchTheme changeTheme={changeTheme}/>
             </div>
-            <Link to="/">Inicio</Link>
-            <Link to="/aboutus">Sobre mi</Link>
+            <Link to="/" className="navbar--link">Inicio</Link>
+            <Link to="/aboutus" className="navbar--link">Sobre mi</Link>
             <div className="dropdown">
                 <button className="dropbtn">Productos
                     <i className="fa fa-caret-down"></i>
                 </button>
                 <div className="dropdown-content">
-                    <Link to="/aros">Aros</Link>
-                    <Link to="/collares">Collares</Link>
+                    <Link to="/aros" className="navbar--link">Aros</Link>
+                    <Link to="/collares" className="navbar--link">Collares</Link>
                 </div>
             </div>
-            <Link to="/contact">Contacto</Link>
+            <Link to="/contact" className="navbar--link">Contacto</Link>
             <a href="javascript:void(0);" className="icon" onClick={() => myFunction()}>&#9776;</a>
         </div>
     )
