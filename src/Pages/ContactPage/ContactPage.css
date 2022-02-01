@@ -84,3 +84,26 @@ textarea {
     background-color: rgb(61, 60, 60);
     padding: 20px;
 }
+
+.sent-content{
+    max-width: 325px;
+    font-size: 60px;
+    background: rgb(238, 182, 108);
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: all 500ms ease;
+}
+
+.sent-container.active .sent-content{
+    transform: translate(-50%,-50%) scale(1);
+    transition: all 500ms ease;
+}
+
+.sent-container button{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
