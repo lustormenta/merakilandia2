@@ -4,7 +4,7 @@
     text-align: center;
     width: 300px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     padding-top: 30px;
 }
 
@@ -12,7 +12,7 @@
     text-align: center;
     width: 300px;
     margin: 0 auto;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     padding-top: 30px;
 }
 
@@ -46,7 +46,7 @@
     padding: 20px;
 }
 
-.item-list-container{
+.item-list-container {
         width: 90%;
         margin-inline: auto;
         display: grid;
@@ -58,9 +58,13 @@
 }
 
 @media only screen and (max-width:780px){
-    .items-container{
+    .item-list-container {
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 0;
     }
 }

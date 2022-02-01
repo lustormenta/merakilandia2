@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import './NavBar.css';
-import AppBar from '@mui/material/AppBar';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
-import Logo from '../../assets/logoMeraki.PNG'
 import ThemeContext from "../../context/ThemeContext";
 import SwitchTheme from "../SwitchTheme/SwitchTheme";
 
@@ -27,33 +25,38 @@ export default function NavBar() {
         }
     }, [])
 
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    const myFunction = () => {
+        let x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
     
     return(
-        <AppBar id="header" className={theme ? 'theme-dark' : 'theme-light'} position={fixedNavBar ? "fixed" : "static"}>
-            <nav id="menu">
-                <div className="container-logo">
-                    <Link to='/'><img className="logoMeraki" src={Logo} alt="logo"/></Link>
-                    <h1 className="Titulo" >Merakilandia</h1>
+        <div id="myTopnav" className={`topnav ${theme ? 'theme-dark' : 'theme-light'}`} position={fixedNavBar ? "fixed" : "static"}>
+            <div className="container-logo">
+                <Link to='/'><h1 className="Titulo" >Merakilandia</h1></Link>
+            </div>
+            <div className="iconos">
+            <CartWidget />
+            <SwitchTheme changeTheme={changeTheme}/>
+            </div>
+            <Link to="/">Inicio</Link>
+            <Link to="/aboutus">Sobre mi</Link>
+            <div className="dropdown">
+                <button className="dropbtn">Productos
+                    <i className="fa fa-caret-down"></i>
+                </button>
+                <div className="dropdown-content">
+                    <Link to="/aros">Aros</Link>
+                    <Link to="/collares">Collares</Link>
                 </div>
-                <div>
-                    <ul className="list">
-                        <li><CartWidget /></li>
-                        <li><SwitchTheme changeTheme={changeTheme}/></li>
-                        <li><Link to="/Contact">Contact</Link></li>
-                        <li><Link to="/AboutUs">About Us</Link></li>
-                        <li>
-                        <div className="dropdown">
-                            <button className="dropbtn">Products</button>
-                            <ul className="dropdown-content">
-                                <li><Link to="/aros">Aros</Link></li>
-                                <li><Link to="/collares">Collares</Link></li>
-                            </ul>
-                        </div>
-                        </li>
-                        <li><Link to="/">Home</Link></li>
-                    </ul>
-                </div>
-            </nav>
-        </AppBar>
+            </div>
+            <Link to="/contact">Contacto</Link>
+            <a href="javascript:void(0);" className="icon" onClick={() => myFunction()}>&#9776;</a>
+        </div>
     )
 }

@@ -1,4 +1,5 @@
 import React, {useContext, useState} from 'react'
+import ThemeContext from '../../context/ThemeContext'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Button } from '@mui/material';
@@ -7,7 +8,7 @@ import ContactModal from '../../components/ContactModal/ContactModal';
 import './CartPage.css'
 
 export default function CartPage() {
-
+    const {theme} = useContext(ThemeContext)
     const { products, totalPrice } = useContext(CartContext)
     const [open, setOpen] = useState(false);
 
@@ -20,7 +21,7 @@ export default function CartPage() {
     };
 
     return (
-        <>
+        <div className={`final-cart ${theme ? 'theme-dark' : 'theme-light'}`}>
             <Container className='container-cart-page'>
                 <Grid container xs={8}>
                     <Grid container spacing={2} className="header-cart">
@@ -38,16 +39,16 @@ export default function CartPage() {
                         return(
                             <Grid key={product.id} container spacing={2} className="body-cart item-cart-page">
                                 <Grid item xs={2} >
-                                    <img width={200} height={200} src={`../assets/${product.image}`} alt="img" />
+                                    <img className="imgCart" src={`../assets/${product.image}`} alt="img" />
                                 </Grid>
                                 <Grid item xs={6} >
-                                    <p>{product.name}</p>
+                                    <p className='product-name'>{product.name}</p>
                                 </Grid>
                                 <Grid item xs={2} >
-                                    <p>{product.quantity}</p>
+                                    <p className='product-quantity'>{product.quantity}</p>
                                 </Grid>
                                 <Grid item xs={2} >
-                                    <p>$ {product.price}</p>
+                                    <p className='product-price'>$ {product.price}</p>
                                 </Grid>
                             </Grid>
                         )
@@ -55,14 +56,14 @@ export default function CartPage() {
                 </Grid>
                 <Grid container xs={4} className='grid-total-price'>
                     <div>
-                        <p>SUBTOTAL</p>
+                        <p className='precios'>SUBTOTAL</p>
                         <span>$ {totalPrice}</span>
                     </div>
                     <div>
-                        <p>TOTAL</p>
+                        <p className='precios'>TOTAL</p>
                         <span>$ {totalPrice}</span>
                     </div>
-                    <Button onClick={handleClickOpen}>COMPLETAR COMPRA</Button>
+                    <Button className='cart-button' onClick={handleClickOpen}>COMPLETAR COMPRA</Button>
                 </Grid>
             </Container>
             <ContactModal 
@@ -71,6 +72,6 @@ export default function CartPage() {
                 products={products} 
                 total={totalPrice}
             />
-        </>
+        </div>
     )
 }

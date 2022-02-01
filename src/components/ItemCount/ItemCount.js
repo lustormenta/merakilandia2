@@ -5,11 +5,10 @@ import ThemeContext from "../../context/ThemeContext";
 
 
 export default function ItemCount({stock, onAdd}) {
-    const { theme, changeTheme} = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext)
     const [clicks, setClicks] = useState(0)
 
     const more = () => {
-        
         if(clicks < stock) {
             setClicks(clicks + 1)
         }

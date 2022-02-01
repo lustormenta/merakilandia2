@@ -1,5 +1,95 @@
-.grid-total-price {
-    border: 4px solid black;
-    padding-bottom: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Cute+Font&family=Dongle&family=Nunito+Sans:wght@200&family=Yomogi&display=swap');
+
+.theme-light .grid-total-price {
+    border: 2px solid black;
+    padding-bottom: 13px;
     padding-left: 10px;
+    margin-block: 20px;
+    background-color: rgba(231, 178, 108, 0.719);
+}
+.theme-dark .grid-total-price {
+    border: 2px solid rgb(252, 207, 207);
+    padding-bottom: 13px;
+    padding-left: 10px;
+    margin-block: 20px;
+    color: honeydew;
+    background-color: rgb(61, 60, 60);
+}
+
+.final-cart {
+    padding-block: 30px;
+}
+.theme-dark.final-cart {
+    background-color: rgb(92, 90, 90);
+}
+
+.theme-light .cart-button {
+    color: black;
+    text-shadow: 1px 2px 2px grey;
+    padding-top: 15px;
+}
+.theme-dark .cart-button {
+    color: rgb(252, 207, 207);
+    text-shadow: 2px 2px 2px black;
+    padding-top: 15px;
+}
+
+.theme-light .header-cart {
+    margin-bottom: 30px;
+    text-shadow: 1px 2px 2px rgb(233, 151, 43);
+}
+.theme-dark .header-cart {
+    margin-bottom: 30px;
+    color: rgb(245, 214, 189);
+    text-shadow: 1px 2px 2px black;
+}
+.header-cart h3 {
+    font-size: clamp(12px, 2vw, 24px)
+}
+
+.product-name {
+    font-family: 'Dongle', sans-serif;
+    font-size: clamp(18px, 3vw, 30px);
+}
+.theme-dark .product-name {
+    color: rgb(245, 214, 189);
+}
+
+.theme-light .product-quantity {
+    font-weight: bold;
+}
+.theme-dark .product-quantity {
+    color: rgb(245, 214, 189);
+    font-size: bold;
+}
+
+.theme-light .product-price {
+    font-weight: bold;
+}
+.theme-dark .product-price {
+    color: rgb(245, 214, 189);
+    font-weight: bold;
+}
+
+.imgCart{
+    width: clamp(64px, 15vw,200px);
+}
+
+.theme-light .precios {
+    text-shadow: 1px 2px 2px grey;
+}
+.theme-dark .precios {
+    text-shadow: 1px 2px 2px black;
+}
+
+@media only screen and (max-width: 780px) {
+    .grid-total-price {
+        font-size: 12px;
+    }
+
+    .cart-button {
+        font-size: 12px !important;
+        padding-right: 10px;
+    }
+
 }

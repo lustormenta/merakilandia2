@@ -12,7 +12,7 @@ export default function Item({data}) {
         <div className={`item-container ${theme ? 'theme-dark' : 'theme-light'}`}>
             <img className='fotos' src= {`./assets/${data.img}`} alt={data.name} width="300" height="300"/>
             <h3>{data.name}</h3>
-            <b>${data.price}</b>
+            <b className='negrita'>${data.price}</b>
             <p>Stock: {data.stock}</p>
             <Link to={`/product/${data.id}`}><button className='btn-comprar'>Comprar</button></Link>
         </div>

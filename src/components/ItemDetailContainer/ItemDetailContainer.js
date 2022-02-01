@@ -1,14 +1,21 @@
 //Hooks
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
 import { useParams } from 'react-router-dom'
 //Components
 import ItemDetail from '../ItemDetail/ItemDetail'
+import './ItemDetailContainer.css'
 //Firebase
 import { doc, getDoc } from 'firebase/firestore'
 import db from '../../firebase'
 
+// Context
+import ThemeContext from '../../context/ThemeContext'
+
+
 export default function ItemDetailContainer() {
     const [product, setProduct] = useState([])
+    const {theme} = useContext(ThemeContext)
+
     const { id } = useParams()
 
         async function productos(db)  {
@@ -28,7 +35,7 @@ export default function ItemDetailContainer() {
         }, [id])
 
         return (
-            <div>
+            <div className={`item-detail-container ${theme ? 'theme-dark' : 'theme-light'}`}>
                 <ItemDetail data={product}/>
             </div>
         )
