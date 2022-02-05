@@ -55,20 +55,18 @@
     color: rgb(245, 214, 189);
 }
 
-.theme-light .product-quantity {
+.product-quantity {
     font-weight: bold;
 }
 .theme-dark .product-quantity {
     color: rgb(245, 214, 189);
-    font-size: bold;
 }
 
-.theme-light .product-price {
+.product-price {
     font-weight: bold;
 }
 .theme-dark .product-price {
     color: rgb(245, 214, 189);
-    font-weight: bold;
 }
 
 .imgCart{

@@ -6,21 +6,13 @@
     background-color: rgb(92, 90, 90);
 }
 
-#contactContainer.theme-light {
+#contactContainer {
     width: 80%;
     margin: 0 auto;
-    margin-top: 30px;
-    padding-bottom: 30px;
+    padding-block: 30px;
 }
 
-#contactContainer.theme-dark {
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.theme-light input[type=text],
+input[type=text],
 select,
 textarea {
     width: 100%;
@@ -36,15 +28,7 @@ textarea {
 .theme-dark input[type=text],
 select,
 textarea {
-    width: 100%;
-    padding: 12px;
     background-color: rgb(189, 189, 189);
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical
 }
 
 .theme-light [type=submit] {
@@ -65,11 +49,7 @@ textarea {
     cursor: pointer;
 }
 
-.theme-light input[type=submit]:hover {
-    background-color: #c9733d;
-}
-
-.theme-dark input[type=submit]:hover {
+input[type=submit]:hover {
     background-color: #c9733d;
 }
 

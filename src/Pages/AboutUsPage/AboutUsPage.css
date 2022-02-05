@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Cute+Font&family=Dongle&family=Nunito+Sans:wght@200&family=Yomogi&display=swap');
 
-#aboutUsContainer.theme-light {
+#aboutUsContainer {
     padding-bottom: 50px;
     padding-top: 30px;
 }
 
 #aboutUsContainer.theme-dark {
-    padding-bottom: 50px;
-    padding-top: 30px;
     background-color: rgb(92, 90, 90);
 }
 

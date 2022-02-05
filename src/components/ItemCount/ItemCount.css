@@ -10,7 +10,7 @@ p {
     margin: 15px;
 }
 
-.theme-light .botonMasMenos {
+.botonMasMenos {
     font-weight: bold;
     margin: 10px;
     border-radius: 30px !important;
@@ -18,11 +18,7 @@ p {
 }
 
 .theme-dark .botonMasMenos {
-    font-weight: bold;
-    margin: 10px;
-    border-radius: 30px !important;
     color: wheat !important;
-    padding: 10px !important
 }
 
 .theme-light .btn-Carrito {

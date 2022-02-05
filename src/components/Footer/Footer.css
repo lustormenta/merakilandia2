@@ -10,42 +10,26 @@
     padding-bottom: 20px;
 }
 
-.theme-light .SectionsFooter{
+.SectionsFooter{
     display: flex;
     justify-content: left;
 }
 
-.theme-dark .SectionsFooter {
-    display: flex;
-    justify-content: left;
-}
-
-.theme-light .text{
+.text{
     text-align: left;
     padding: 30px 44px 0px;
 }
 
 .theme-dark .text {
-    text-align: left;
-    padding: 30px 44px 0px;
     color: gainsboro;
 }
 
-.theme-light .ul{
+.ul{
     list-style-type: none;
     text-align: left;
 }
 
-.theme-dark .ul{
-    list-style-type: none;
-    text-align: left;
-}
-
-.theme-light .ul .lista{
-    padding: 4px;
-}
-
-.theme-dark .ul .lista{
+.ul .lista{
     padding: 4px;
 }
 
